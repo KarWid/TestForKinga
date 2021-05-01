@@ -13,6 +13,9 @@ namespace Calculator
                 case OptionType.Sum:
                     Sum();
                     break;
+                case OptionType.Multiply:
+                    Multiply();
+                    break;
                 case OptionType.None:
                     return;
             }
@@ -24,6 +27,7 @@ namespace Calculator
         {
             Console.WriteLine("Choose option to do some crazy stuff:");
             Console.WriteLine("1. Sum");
+            Console.WriteLine("2. Multiply");
 
             var option = Console.ReadLine();
             return (OptionType)Enum.Parse(typeof(OptionType), option);
@@ -35,6 +39,14 @@ namespace Calculator
             var x = double.Parse(Console.ReadLine());
             var y = double.Parse(Console.ReadLine());
             Console.WriteLine($"Your sum is {x + y}.");
+        }
+
+        private static void Multiply()
+        {
+            Console.WriteLine("Give me 2 numbers:");
+            var x = double.Parse(Console.ReadLine());
+            var y = double.Parse(Console.ReadLine());
+            Console.WriteLine($"Your result is {x * y}.");
         }
     }
 }
